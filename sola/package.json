@@ -1,0 +1,21 @@
+{
+  "name": "gulptest",
+  "version": "0.0.0",
+  "description": "Gulp入門用テストプロジェクト",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gulp",
+    "tonboro"
+  ],
+  "author": "shinnosuke",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.4.0",
+    "gulp": "^3.8.11",
+    "gulp-autoprefixer": "^2.1.0",
+    "gulp-plumber": "^1.0.0"
+  }
+}
