@@ -7,26 +7,36 @@ var loadflag = false;
 
 $(function(){
     var timer = false;
-    
-    
+
+
     $.when(
-        setResize()
+        setResize(),
+        garelly_resize()
     ).done(function(){
         naviFrag = true;
     });
     button_animation();
     $(window).on('resize', function(){
+        garelly_resize();
         if (timer !== false){
             clearTimeout(timer);
         }
         timer = setTimeout(setResize, 100);
     }).on('scroll', glNavi_animation);;
-    
+
     $('.js_link').each(function(){
         $(this).on('click', link_translate);
     });
-    
+
     $(".p-nav__child__link.js_link").each(glNavi_hover);
+
+    garelly_hover();
+
+    //modal
+    $('#myModal').on('shown.bs.modal', function () {
+        $('#myInput').focus();
+    });
+
 });
 //----------resize--------------------------
 function setResize(){
@@ -38,7 +48,7 @@ function setResize(){
     $('.p-title').animate({
         'margin-top' : contentHeight/3
     } ,200);
-    
+
 };
 
 //----------navigation_animation------------
@@ -52,7 +62,7 @@ function glNavi_animation(){
             $(header).slideUp(200);
         }
     }
-};
+}
 
 function glNavi_hover(){
     $(this).hover(function(){
@@ -90,7 +100,7 @@ function button_animation(){
                 'border-color':'#000000',
                 'color': '#130f30'
             });
-        });                 
+        });
 }
 //----------link_animation------------------
 function link_translate(){
@@ -98,6 +108,26 @@ function link_translate(){
     var linkPostion = $(toLink).offset().top;
     $('html,body').animate({ scrollTop: linkPostion }, 300);
     return false;
-};
+}
+//----------garelly_animation---------------
+var garelly = $('.p-garelly--works');
+var garelly_child = $('.p-garelly--works .c-garelly__children');
 
-
+function garelly_hover(){
+    $(garelly_child).each(function(){
+        $(this).hover(
+            function(){
+                $(this).find(".c-garelly__children--hover").css("display", "block");
+            },
+            function(){
+                $(this).find(".c-garelly__children--hover").css("display", "none");
+            });
+    });
+}
+function garelly_resize(){
+   
+    var garelly_width = garelly_child.find("img").width();
+    $(garelly_child).find(".c-garelly__children--hover").css({
+        'width': garelly_width
+    });
+}

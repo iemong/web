@@ -28,6 +28,7 @@ header {
   height: 60px;
   background-color: #130f30;
   display: none;
+  z-index: 5;
 }
 
 section {
@@ -71,6 +72,58 @@ Object
   margin-top: 100px;
 }
 
+.c-paragraph, .c-form__contents {
+  text-align: left;
+}
+
+.c-garelly__children {
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+.c-garelly__children img {
+  cursor: pointer;
+  z-index: 1;
+}
+.c-garelly__children--hover {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(19, 15, 48, 0.7);
+  color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  cursor: pointer;
+  z-index: 2;
+}
+.c-garelly__children--hover p {
+  text-align: left;
+  box-sizing: border-box;
+  padding-top: 5px;
+  padding-left: 10px;
+}
+
+.c-imageBox {
+  position: relative;
+}
+
+.c-form__contents {
+  margin-bottom: 10px;
+}
+.c-form__contents label {
+  margin-left: 5px;
+}
+.c-form__contents textarea {
+  height: 102px;
+}
+.c-form__contents .help-block {
+  display: inline-block;
+  font-size: 10px;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 2px;
+}
+
 .p-nav {
   background-color: #130f30;
   box-sizing: border-box;
@@ -96,4 +149,33 @@ Object
 }
 .p-nav__child__link:hover {
   text-decoration: none;
+}
+
+.p-logo {
+  max-width: 320px;
+  width: 60%;
+}
+
+.p-paragraph--about {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.p-garelly--works {
+  margin-top: 40px;
+}
+
+.p-form {
+  margin-top: 40px;
+}
+.p-form__input {
+  margin-bottom: 30px;
+}
+
+.p-form__output {
+  width: 200px;
+}
+
+.p-modal__close {
+  cursor: pointer;
 }
